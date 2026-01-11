@@ -11,6 +11,7 @@ import logging
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 # Create your views here.
+from .models import Submission
 
 
 def registration_request(request):
@@ -110,6 +111,7 @@ def enroll(request, course_id):
          # Collect the selected choices from exam form
          # Add each selected choice object to the submission object
          # Redirect to show_exam_result with the submission id
+
 def submit(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
     user = request.user
